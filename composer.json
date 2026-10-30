@@ -1,0 +1,22 @@
+{
+    "name": "panda-men/think-throttle",
+    "description": "Atomic Redis Lua rate limiting for ThinkPHP 8 and PHP 8.2+",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/panda-men/think-throttle",
+    "keywords": ["thinkphp", "rate-limit", "throttle", "redis", "lua", "token-bucket"],
+    "require": {
+        "php": "^8.2",
+        "ext-redis": ">=6.0",
+        "topthink/framework": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.5 || ^12.5 || ^13.2"
+    },
+    "autoload": {"psr-4": {"Panda\\ThinkThrottle\\": "src/"}},
+    "autoload-dev": {"psr-4": {"Panda\\ThinkThrottle\\Tests\\": "tests/"}},
+    "extra": {"think": {"services": ["Panda\\ThinkThrottle\\Service"], "config": {"think_throttle": "config/think_throttle.php"}}},
+    "scripts": {"test": "@php vendor/bin/phpunit", "lint": "@php scripts/lint.php"},
+    "config": {"sort-packages": true},
+    "support": {"issues": "https://github.com/panda-men/think-throttle/issues", "source": "https://github.com/panda-men/think-throttle"}
+}
